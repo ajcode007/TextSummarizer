@@ -3,7 +3,8 @@ import os
 from pathlib import Path
 import logging
 
-logging.basicConfig(level=logging.INFO,format='[%(asctime)s]: %(message):')
+# fixed format: use %(message)s (was missing the trailing 's')
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 
 project_name = 'TextSummarizer'
