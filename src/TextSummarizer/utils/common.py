@@ -33,8 +33,8 @@ def read_yaml(path_to_yaml:Path) -> ConfigBox:
     except Exception as e:
         raise e
 
-@ensure_annotations
-def create_directories(path_to_directories:list,vebose=True):
+
+def create_directories(path_to_directories:list,vebose=True) -> None:
         """create list of directories
 
     Args:
