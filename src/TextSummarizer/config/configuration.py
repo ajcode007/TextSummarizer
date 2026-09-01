@@ -6,7 +6,7 @@ if not hasattr(unittest.TestCase, "assertRaisesRegexp"):
     unittest.TestCase.assertRaisesRegexp = unittest.TestCase.assertRaisesRegex
 
 from src.TextSummarizer.utils.common import read_yaml, create_directories
-from src.TextSummarizer.entity import DataIngestionConfig
+from src.TextSummarizer.entity import DataIngestionConfig,DataTransformationConfig
 
 
 # Every component has a funcionality which need to be defined
@@ -32,3 +32,17 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config=self.config.data_transformation
+        create_directories([config.root_dir])
+
+        data_ingestion_config = DataTransformationConfig(
+            root_dir = config.root_dir,
+            data_path = config.data_path,
+            tokenizer_name = config.tokenizer_name
+        )
+
+        return data_ingestion_config
+
+
