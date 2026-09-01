@@ -30,3 +30,21 @@
 [2026-08-27 10:15:54,691: INFO: common]: yaml file: config\config.yaml loaded successfully]
 [2026-08-27 10:15:54,693: INFO: common]: yaml file: params.yaml loaded successfully]
 [2026-08-27 10:15:54,695: INFO: common]: created directory at: artifacts]
+[2026-08-27 10:16:13,008: INFO: common]: yaml file: config\config.yaml loaded successfully]
+[2026-08-27 10:16:13,011: INFO: common]: yaml file: params.yaml loaded successfully]
+[2026-08-27 10:16:13,012: INFO: common]: created directory at: artifacts]
+[2026-08-27 10:16:13,014: INFO: common]: created directory at: artifacts/data_ingestion]
+[2026-08-27 10:16:17,464: INFO: 3670110654]: File is downloaded]
+[2026-09-01 22:59:12,094: INFO: main]: stage Data Ingestion stage initiated]
+[2026-09-01 22:59:12,095: ERROR: main]: DataIngestionTrainingPipeline.initiate_data_ingestion() takes 0 positional arguments but 1 was given]
+Traceback (most recent call last):
+  File "C:\Users\AJAY\Documents\ML Projects\TextSummarizer\main.py", line 13, in <module>
+    data_ingestion_pipeline.initiate_data_ingestion()
+TypeError: DataIngestionTrainingPipeline.initiate_data_ingestion() takes 0 positional arguments but 1 was given
+[2026-09-01 22:59:56,736: INFO: main]: stage Data Ingestion stage initiated]
+[2026-09-01 22:59:56,743: INFO: common]: yaml file: config\config.yaml loaded successfully]
+[2026-09-01 22:59:56,744: INFO: common]: yaml file: params.yaml loaded successfully]
+[2026-09-01 22:59:56,746: INFO: common]: created directory at: artifacts]
+[2026-09-01 22:59:56,747: INFO: common]: created directory at: artifacts/data_ingestion]
+[2026-09-01 23:00:02,881: INFO: data_ingestion]: File is downloaded]
+[2026-09-01 23:00:03,131: INFO: main]: stage Data Ingestion stage completed]

@@ -1,5 +1,7 @@
 # TextSummarizer using Huggingface
 
+Our Aim is to create in a form, which will be scalable in the production
+
 ### Workflow
 
 1. config.yaml -> basic configuration like path of the artifacts dir needs to be created, link of the data source for data ingestion we needs to update 
@@ -15,3 +17,4 @@
 
 Data ingestion -> Implementation
 read it from a source -> download the zip -> extact the zip file -> save it in data ingestion floder
+
