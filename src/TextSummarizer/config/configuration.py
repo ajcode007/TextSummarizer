@@ -6,7 +6,7 @@ if not hasattr(unittest.TestCase, "assertRaisesRegexp"):
     unittest.TestCase.assertRaisesRegexp = unittest.TestCase.assertRaisesRegex
 
 from src.TextSummarizer.utils.common import read_yaml, create_directories
-from src.TextSummarizer.entity import DataIngestionConfig,DataTransformationConfig
+from src.TextSummarizer.entity import DataIngestionConfig,DataTransformationConfig,ModelTrainingConfig
 
 
 # Every component has a funcionality which need to be defined
@@ -44,5 +44,27 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+
+    def get_model_trainer_config(self) -> ModelTrainingConfig:
+        config = self.config.model_trainer
+        params = self.params.TrainingArguments
+
+        create_directories([config.root_dir])
+
+        model_traniner_config = ModelTrainingConfig(
+            root_dir = config.root_dir,
+            data_path = config.data_path,
+            model_ckpt =  config.model_ckpt,
+            num_train_epochs = params.num_train_epochs,
+            warmup_steps = params.warmup_steps,
+            per_device_train_batch_size = params.per_device_train_batch_size,
+            weight_decay = params.weight_decay,
+            logging_steps  = params.logging_steps,
+            eval_strategy = params.eval_strategy,
+            eval_steps  = params.eval_steps,
+            save_steps = params.save_steps,
+            gradient_accumulation_steps = params.gradient_accumulation_steps
+        )
+        return model_traniner_config
 
 
